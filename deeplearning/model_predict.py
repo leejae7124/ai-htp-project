@@ -106,7 +106,7 @@ def classification(model_file_name, img_path, SIZE):###########수정 내용. �
    result = np.argmax(prediction) #결과 확인.
    return str(result)
 
-######멀티라벨 모델로 갈 경우 사용.
+#######멀티라벨 모델로 갈 경우 사용.
 def classification_multi(model_file_name, img_path, class_li, SIZE, COUNT):
 
     SCORE_THRESHOLD = 0.5
