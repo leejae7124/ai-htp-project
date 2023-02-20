@@ -4,8 +4,8 @@
       <button v-if="isPlaying" @click="toggleSound" class="sound-btn">
         <img class="icon-sound" src="../../assets/images/volumeon.png" />
       </button>
-      <button v-else @click="toggleSound" class="sound-btn">
-        <img class="icon-sound" src="../../assets/images/volumeoff.png" />
+      <button v-else @click="toggleSound" class="sound-btn1">
+        <img class="icon-sound1" src="../../assets/images/volumeoff.png" />
       </button>
       <div class="first-text">
         <transition name="fade">
@@ -32,14 +32,15 @@
           </p>
         </transition>
       </div>
-      <transition enter-active-class="animate__animated animate__flash">
-        <p v-if="timedTrigger.Trigger5" class="touch-text">화면을 터치하세요</p>
+
+      <transition name="fade">
+        <img
+          v-if="timedTrigger.Trigger5"
+          @click="moveToSecondNext"
+          class="touch-screen"
+          src="../../assets/images/next.png"
+        />
       </transition>
-      <div
-        v-if="timedTrigger.Trigger5"
-        @click="moveToSecondNext"
-        class="touch-screen"
-      ></div>
     </div>
   </transition>
 

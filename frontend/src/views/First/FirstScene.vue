@@ -4,8 +4,8 @@
       <button v-if="isPlaying" @click="toggleSound" class="sound-btn">
         <img class="icon-sound" src="../../assets/images/volumeon.png" />
       </button>
-      <button v-else @click="toggleSound" class="sound-btn">
-        <img class="icon-sound" src="../../assets/images/volumeoff.png" />
+      <button v-else @click="toggleSound" class="sound-btn1">
+        <img class="icon-sound1" src="../../assets/images/volumeoff.png" />
       </button>
       <div class="first-text">
         <transition name="fade">
@@ -30,14 +30,17 @@
           </p>
         </transition>
       </div>
-      <transition>
+      <!-- <transition>
         <p v-if="timedTrigger.Trigger5" class="touch-text">화면을 터치하세요</p>
+      </transition> -->
+      <transition name="fade">
+        <img
+          v-if="timedTrigger.Trigger5"
+          @click="moveToFirstNext"
+          class="touch-screen"
+          src="../../assets/images/next.png"
+        />
       </transition>
-      <div
-        v-if="timedTrigger.Trigger5"
-        @click="moveToFirstNext"
-        class="touch-screen"
-      ></div>
     </div>
   </transition>
   <FirstSceneNext
@@ -148,7 +151,7 @@ export default {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  opacity: 1;
+  /* opacity: 1; */
 }
 .first-text {
   display: inline-block;
@@ -160,7 +163,8 @@ export default {
   right: 0;
   text-align: left;
   color: #fff;
-  font-size: 16px;
+  font-size: 19px;
+  font-family: korFont3;
 }
 .touch-text {
   color: #dededeb9;
@@ -172,7 +176,7 @@ export default {
   text-align: center;
   top: 50%;
   font-size: 17px;
-  animation: blinker 2s linear infinite;
+  animation: blinker 3s linear infinite;
 }
 @keyframes blinker {
   50% {
@@ -181,9 +185,10 @@ export default {
 }
 
 .touch-screen {
-  height: 100vh;
-  background-color: white;
-  opacity: 0%;
+  position: absolute;
+  height: 50px;
+  right: 20px;
+  bottom: 20px;
 }
 .texts {
   margin-top: 20px;

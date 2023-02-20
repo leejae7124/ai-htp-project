@@ -1,7 +1,7 @@
 <template>
   <div class="preloading-page">
     <div class="preloading-content">
-      <img class="animating-image" :src = "imageUrl" />
+      <img class="animating-image" :src="imageUrl" />
       <img class="preloading-image" src="../assets/images/maintext.jpg" />
       <!-- <p class="preloading-text">로딩중...</p> -->
     </div>
@@ -9,16 +9,15 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
       images: [
-      require("../assets/images/icon1.png"),
-      require("../assets/images/icon2.png"),
-      require("../assets/images/icon3.png"),
-      require("../assets/images/icon4.png"),
-      require("../assets/images/icon5.png"),
+        require("../assets/images/icon1.png"),
+        require("../assets/images/icon2.png"),
+        require("../assets/images/icon3.png"),
+        require("../assets/images/icon4.png"),
+        require("../assets/images/icon5.png"),
       ],
       imageIndex: 0,
     };
@@ -40,7 +39,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.imageIndex++;
-    }, 900);
+    }, 400);
   },
 };
 </script>
